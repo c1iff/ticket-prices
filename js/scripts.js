@@ -15,7 +15,7 @@ Ticket.prototype.isMatinee = function(time){
     }
 }
 
-Ticket.prototype.calculatePrice = function(newTicket){
+Ticket.prototype.calculatePrice = function(){
   var price = 0;
 
   if(this.movieValue === 0){
@@ -55,7 +55,7 @@ $(document).ready(function(){
 
     newTicket.time = newTicket.isMatinee(inputTime);
 
-    newTicket.price = newTicket.calculatePrice(newTicket);
+    newTicket.price = newTicket.calculatePrice();
 
     console.log(newTicket);
     $(".price").text(newTicket.price);
