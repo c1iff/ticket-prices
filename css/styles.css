@@ -1,0 +1,15 @@
+body{
+  font-family: 'Russo One', sans-serif;
+}
+
+select{
+  margin-top: 15px;
+}
+
+input{
+  margin-top: 15px;
+}
+
+.output {
+  display: none;
+}
