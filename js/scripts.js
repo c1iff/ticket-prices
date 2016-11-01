@@ -15,25 +15,25 @@ Ticket.prototype.isMatinee = function(time){
     }
 }
 
-Ticket.prototype.calculatePrice = function(movieValue, time, ticketType){
+Ticket.prototype.calculatePrice = function(newTicket){
   var price = 0;
 
-  if(movieValue === 0){
+  if(this.movieValue === 0){
     price += 5;
   }
   else {
     price += 10;
   }
-  if(time){
+  if(this.time){
     price += 1;
   }
   else{
     price += 3;
   }
-  if(ticketType === 0){
+  if(this.ticket === 0){
     price -= 1;
   }
-  else if(ticketType === 1){
+  else if(this.ticket === 1){
     price += 2;
   }
   else{
@@ -55,7 +55,7 @@ $(document).ready(function(){
 
     newTicket.time = newTicket.isMatinee(inputTime);
 
-    newTicket.price = newTicket.calculatePrice(newTicket.movieValue, newTicket.time, newTicket.ticket);
+    newTicket.price = newTicket.calculatePrice(newTicket);
 
     console.log(newTicket);
     $(".price").text(newTicket.price);
